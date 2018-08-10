@@ -1,0 +1,60 @@
+/***************GENERAL*****************/
+
+.cont {
+    padding: 1% 2%;
+    background-color: transparent;
+    box-shadow: 2px 2px 23px 2px rgba(110,136,228,0.75);
+}
+
+h1, h3, p, li {
+    color: rgb(195, 226, 245);
+}
+
+.container-fluid--my {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url('../img/world.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/world.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+.row--my.row {
+    padding: 0;
+    margin: 0;
+}
+
+.row--mycont.row {
+    padding-top: 3%;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.non-list-style {
+    list-style: none;
+}
+
+.whity-text {
+    color: #fff;
+}
+
+/******************HEADER*****************/
+
+.header-title {
+    padding-top: 2%;
+}
+
+/****************ASIDE********************/
+
+.searched-countries {
+    padding-top: 4%;
+}
+
+/****************MAIN********************/
+
+.card {
+    width: 13rem;
+}
