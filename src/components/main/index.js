@@ -3,7 +3,7 @@ import Countries from './countries/';
 
 const Main = ({ countries }) => {
     return (
-        <div className='row row--my'>
+        <div>
             <Countries countries = {countries} />
         </div>
     );
