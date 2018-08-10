@@ -3,33 +3,20 @@ import Card from './card/';
 
 class Countries extends React.Component {
 
-    constructor(props) { //setea initial state and component first time
-        super(props);
-        this.state = {
-            country: {
-                flag: this.props.countries[10].flag,
-                name: this.props.countries[5].name
-            }, //data from api
-            isLoaded: false,// isLoaded: false, //when items are loaded
-        }
-    }
-
     render() {
-        return (
-            <div>
-                {
-                    this.props.countries.map = (country, index) => {
+        var size = 9;
+        var items = this.props.countries.slice(0, size).map((country) => {
+            return (
+                <div className='card-cont' key={country.alpha3Code}>
+                    <Card country={country} />
+                </div>
+            )
+        })
 
-                        this.setState = {
-                            country: {
-                                
-                            }
-                        }
-                       return <Card country={this.state.country} />
-                    }
-                    
-                }
-            </div >
+        return (
+            <div className=''>
+                {items}
+            </div>
         )
     }
 }

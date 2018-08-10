@@ -56,5 +56,8 @@ h1, h3, p, li {
 /****************MAIN********************/
 
 .card {
-    width: 13rem;
+    width: 10rem;
+}
+
+.card-cont {
 }
