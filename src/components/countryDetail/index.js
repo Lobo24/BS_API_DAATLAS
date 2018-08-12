@@ -29,13 +29,13 @@ class countryDetail extends React.Component {
         else {
             return (
 
-                <div>
+                <div className='container'>
                     <h1>{country.name}</h1>
                     <h3>Capital: {country.capital}</h3>
                     <h3>Region: {country.region}</h3>
                     <h3>Subregion: {country.subregion}</h3>
                     <h3>Native Name: {country.nativeName}</h3>
-                    <h3>Area: {country.area}</h3>
+                    <h3>Area: {country.area} km²</h3>
                     <h3>Demonym: {country.demonym}</h3>
                 </div>
             )
