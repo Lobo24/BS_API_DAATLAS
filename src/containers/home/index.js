@@ -8,48 +8,59 @@ const api = 'https://restcountries.eu/rest/v2';
 
 class Home extends React.Component {
 
-    constructor(props) { //setea initial state and component first time
-        super(props);
-        this.state = {
-            items: [], //data from api
-            isLoaded: false,// isLoaded: false, //when items are loaded
-        }
+  constructor(props) { //set initial state and component first time
+    super(props);
+    this.state = {
+      items: [], //will => data from api
+      isLoaded: false,
+    }
+  }
+
+  async componentDidMount() {
+
+    const res = await fetch(api);
+    const items = await res.json();
+
+    await setTimeout(() => {
+      this.setState({
+        items,
+        isLoaded: true
+      })
+    }, 1000);
+
+
+  }
+
+  render() {
+
+    var { isLoaded, items } = this.state;
+
+    if (!isLoaded) {
+      return (
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="circle left rotate"><span></span></div>
+          <div className="circle right rotate"><span></span></div>
+        </div>
+      );
     }
 
-    async componentDidMount() { //metodo de componente, que hacer en cada cicle
-
-        const res = await fetch(api);
-        const items = await res.json();
-
-        this.setState({
-            items,
-            isLoaded: true
-        })
+    else {
+      return (
+        <div className='row row--my row--mycont'>
+          <div className='col-md-2 col-sm-2'>
+            <aside>
+              <Aside />
+            </aside>
+          </div>
+          <div className='offset-1 col-md-8 col-sm-8'>
+            <div className="container">
+              <Main countries={items} />
+            </div>
+          </div>
+        </div>
+      );
     }
-
-    render() {
-
-        var { isLoaded, items } = this.state;
-
-        if (!isLoaded) {
-            return <div>Loading...</div>
-        }
-
-        else {
-            return (
-                <div className='row row--my row--mycont'>
-                    <div className='col-md-3 col-sm-3'>
-                        <aside>
-                            <Aside />
-                        </aside>
-                    </div>
-                    <div className='offset-1 col-md-8 col-sm-8'>
-                        <Main countries={this.state.items} />
-                    </div>
-                </div>
-            );
-        }
-    }
+  }
 }
 
 export default Home;

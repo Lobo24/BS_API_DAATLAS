@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 
 
 
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/app.css';
 
 import Header from './components/header/';
