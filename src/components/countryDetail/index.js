@@ -12,12 +12,10 @@ class countryDetail extends React.Component {
 
   componentDidMount() {
 
-    setTimeout(() => {
-      this.setState({
-        country: JSON.parse(this.props.location.query.obj),
-        isLoaded: true
-      })
-    }, 1000);
+    this.setState({
+      country: JSON.parse(this.props.location.query.obj),
+      isLoaded: true
+    })
   }
 
   render() {
