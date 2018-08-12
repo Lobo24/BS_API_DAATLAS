@@ -10,13 +10,16 @@ h1, h3, p, li {
     color: rgb(195, 226, 245);
 }
 
-.container-fluid--my {
+body {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url('../img/world.png');
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/world.png');
+    height: auto;
     background-size: cover;
     background-position: center;
-    height: 100vh;
     background-attachment: fixed;
+}
+
+.container-fluid--my {
     margin: 0;
 }
 
@@ -27,6 +30,10 @@ h1, h3, p, li {
 
 .row--mycont.row {
     padding-top: 3%;
+}
+
+.col--my {
+    padding: 0;
 }
 
 .upper {
@@ -57,7 +64,24 @@ h1, h3, p, li {
 
 .card {
     width: 10rem;
+    margin-top: 20px;
+    background-color: #eeeeee54;
 }
 
-.card-cont {
+.card-img-top {
+    height: 6rem;
+}
+
+.card-title {
+    font-size: 14px;
+    margin: 0;
+}
+.card-title a {
+    color: rgb(188, 223, 247);
+}
+
+@media (max-height: 700px) {
+    .container-fluid--my {
+        height: auto;
+    }
 }
