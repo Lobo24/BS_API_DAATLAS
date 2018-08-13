@@ -23,7 +23,7 @@ class Countries extends React.Component {
 
 
 
-    let size = 18;
+    let size = 15;
     let items = filteredCountries.slice(0, size).map((country) => {
       return (
         <div key={country.alpha3Code}>
@@ -33,10 +33,8 @@ class Countries extends React.Component {
     })
 
     return (
-      <div>
-        <div className='d-flex justify-content-center'>
-          <input type="text" className="form-control" value={this.state.search} onChange={this.updateSearch.bind(this)} placeholder="SEARCH" />
-        </div>
+      <div className='countries-container'>
+        <input type="text" className="form-control input-filter" value={this.state.search} onChange={this.updateSearch.bind(this)} placeholder="SEARCH" />
         <div className='card-deck'>
           {items}
         </div>
