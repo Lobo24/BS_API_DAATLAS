@@ -47,12 +47,12 @@ class Home extends React.Component {
     else {
       return (
         <div className='row row--my row--mycont'>
-          <div className='col-md-2 col-sm-2'>
+          <div className=' offset-1 col-md-2 col-sm-2'>
             <aside>
               <Aside />
             </aside>
           </div>
-          <div className='offset-1 col-md-8 col-sm-8'>
+          <div className='offset-1 col-md-7 col-sm-7'>
             <div className="container">
               <Main countries={items} />
             </div>
