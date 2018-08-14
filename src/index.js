@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import 'babel-polyfill';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
+import store from './redux/store'
 
-
+import { createStore, applyMiddleware } from 'redux'
 
 import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/app.css';
@@ -16,15 +18,17 @@ class App extends Component {
 
     render() {
         return (
-            <BrowserRouter>
-                <div className='container-fluid container-fluid--my'>
-                    <Header />
-                    <Switch>
-                        <Route exact path='/' component={Home} />
-                        <Route exact path='/countryDetail/:name' component={countryDetail} />
-                    </Switch>
-                </div>
-            </BrowserRouter>
+            <Provider store={store} >
+                <BrowserRouter>
+                    <div className='container-fluid container-fluid--my'>
+                        <Header />
+                        <Switch>
+                            <Route exact path='/' component={Home} />
+                            <Route exact path='/countryDetail/:name' component={countryDetail} />
+                        </Switch>
+                    </div>
+                </BrowserRouter>
+            </Provider>
         )
     }
 }
