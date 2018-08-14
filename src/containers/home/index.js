@@ -38,8 +38,9 @@ class Home extends React.Component {
     if (!isLoaded) {
       return (
         <div className="d-flex justify-content-center align-items-center">
-          <div className="circle left rotate"><span></span></div>
-          <div className="circle right rotate"><span></span></div>
+          <div className="lds-css ng-scope">
+            <div className="lds-gear"><div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+          </div>
         </div>
       );
     }

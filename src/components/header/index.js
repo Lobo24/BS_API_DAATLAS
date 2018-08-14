@@ -1,10 +1,12 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <div className='d-flex justify-content-center'>
-            <div className="logo"></div>
+            <Link to='/'>
+                <div className="logo"></div>
+            </Link>
         </div>
 
     )

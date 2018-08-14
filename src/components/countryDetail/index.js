@@ -34,7 +34,7 @@ class countryDetail extends React.Component {
     else {
       return (
 
-        <div className='container'>
+        <div className='container container--countryDetail'>
           <div className=" row cont--countryDetail">
             <div className="col-md-4 col-sm-4">
               <h1 className='detail-text'>{country.name}</h1>
