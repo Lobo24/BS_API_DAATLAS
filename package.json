@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
+    "server": "json-server ./database/countries.json --delay 50",
     "start": "webpack-dev-server --open --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,9 +14,10 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.1.3",
+    "history": "^4.7.2",
+    "json-server": "^0.14.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "history": "^4.7.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
