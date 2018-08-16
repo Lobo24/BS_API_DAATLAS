@@ -13,6 +13,7 @@ import './assets/css/app.css';
 import Header from './components/header/';
 import Home from './containers/home/';
 import countryDetail from './components/countryDetail/'
+import Provinces from './components/countryDetail/provinces/';
 
 class App extends Component {
 
@@ -25,6 +26,7 @@ class App extends Component {
                         <Switch>
                             <Route exact path='/' component={Home} />
                             <Route exact path='/countryDetail/:name' component={countryDetail} />
+                            <Route exact path='/provinces/:name' component={Provinces} />
                         </Switch>
                     </div>
                 </BrowserRouter>

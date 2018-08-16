@@ -21,8 +21,6 @@ class Countries extends React.Component {
       }
     );
 
-
-
     let size = 15;
     let items = filteredCountries.slice(0, size).map((country) => {
       return (
