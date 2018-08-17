@@ -3,6 +3,7 @@ import 'babel-polyfill';
 
 import Aside from '../../components/aside/';
 import Main from '../../components/main/';
+import Loading from "../../components/loading/";
 
 //const api = 'https://restcountries.eu/rest/v2';
 const api = 'http://localhost:3000/countries';
@@ -55,8 +56,7 @@ class Home extends React.Component {
         </div>
         : error ? <p>Error...</p>
           : <div className="d-flex justify-content-center">
-            <div className="lds-css ng-scope">
-              <div className="lds-gear"><div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div></div>
+            <Loading />
           </div>
     )
   }
