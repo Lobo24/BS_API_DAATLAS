@@ -1,5 +1,9 @@
 import React from 'react';
 import 'babel-polyfill';
+import { connect } from 'react-redux';
+import { map } from 'ramda';
+
+import getAllCountries from '../../redux/actionCreators/countries'
 
 import Aside from '../../components/aside/';
 import Main from '../../components/main/';
@@ -10,35 +14,13 @@ const api = 'http://localhost:3000/countries';
 
 class Home extends React.Component {
 
-  constructor(props) { //set initial state and component first time
-    super(props);
-    this.state = {
-      countries: [],
-      isLoaded: false,
-      error: null
-    }
-  }
-
   async componentDidMount() {
-
-    try {
-      const response = await fetch(api)
-      const data = await response.json()
-
-      this.setState({
-        countries: data,
-        isLoaded: true
-      })
-    } catch (error) {
-      this.setState({
-        error,
-      })
-    }
+    this.props.getAllCountries()
   }
 
   render() {
 
-    var { isLoaded, countries, error } = this.state;
+    var { isLoaded, countries, error } = this.props;
 
     return (
       isLoaded ?
@@ -62,4 +44,14 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+const mapStateToProps = state => ({
+  countries: state.countries.countries,
+  isLoaded: state.countries.isLoaded,
+  error: state.countries.error
+})
+
+const mapDispatchToProps = {
+  getAllCountries
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
