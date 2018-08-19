@@ -229,33 +229,33 @@ body {
 
 /*************************** QUERIES ************************************/
 
-@media screen and (max-width: 1924px) {
+@media screen and (max-width: 1434px) {
+  .input-filter {
+    width: 1110px;
+  }
+}
+
+@media screen and (max-width: 1433px) {
   .input-filter {
     width: 920px;
   }
 }
 
-@media screen and (max-width: 1725px) {
+@media screen and (max-width: 1205px) {
   .input-filter {
     width: 730px;
   }
 }
 
-@media screen and (max-width: 1402px) {
+@media screen and (max-width: 994px) {
   .input-filter {
     width: 540px;
   }
 }
 
-@media screen and (max-width: 1075px) {
+@media screen and (max-width: 767px) {
   .input-filter {
     width: 350px;
-  }
-}
-
-@media screen and (max-width: 749px) {
-  .input-filter {
-    width: 160px;
   }
 }
 
@@ -269,10 +269,20 @@ body {
   .card-deck .card {
     margin-bottom: 0;
   }
+  .card-img-top {
+    height: 10rem;
+  }
+  .card {
+    width: 15rem;
+  }
 }
 
 /************************************     TABS    *********************************************/
 
 .tabs-nav-text {
   color: rgb(44, 150, 236);
+}
+
+.nav-item {
+  cursor: pointer;
 }

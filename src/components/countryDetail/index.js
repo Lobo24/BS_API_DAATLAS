@@ -1,13 +1,11 @@
-import React from 'react';
-import Loading from "./../loading/";
-import DetailMenu from "./detailMenu/";
-import DetailCont from "./detailCont";
-import Example from './../../components/tabs/';
+import React from 'react'
+import Loading from './../loading/'
+import Example from './../../components/tabs/'
 
 class countryDetail extends React.Component {
 
   constructor(props) { //setea initial state and component first time
-    super(props);
+    super(props)
     this.state = {
       country: [], //data from api
       isLoaded: false,// isLoaded: false, //when items are loaded
@@ -23,19 +21,18 @@ class countryDetail extends React.Component {
   }
 
   render() {
-
-    var { isLoaded, country } = this.state;
+    var { isLoaded, country } = this.state
 
     return (
       !isLoaded ?
-        <div className="d-flex justify-content-center">
+        <div className='d-flex justify-content-center'>
           <Loading />
         </div>
         : <div>
           <Example country={country} />
         </div>
-    );
+    )
   }
 }
 
-export default countryDetail;
+export default countryDetail

@@ -1,12 +1,12 @@
-import React from 'react';
-import Countries from './countries/';
+import React from 'react'
+import Countries from './countries/'
 
 const Main = ({ countries }) => {
-    return (
-        <div>
-            <Countries countries = {countries} />
-        </div>
-    );
+  return (
+    <div>
+      <Countries countries={countries} />
+    </div>
+  );
 }
 
-export default Main;
+export default Main

@@ -1,12 +1,12 @@
 import * as a from '../actions/types'
 
-const API_URL = 'http://localhost:3000/countries'
+const API_URL = 'http://localhost:3000/comments'
 
-export default function getAllCountries() {
+export default function getAllComments() {
   return async dispatch => {
     // Initiate loading state
     dispatch({
-      type: a.COUNTRIES_GETALL_REQUEST
+      type: a.COMMENTS_GETALL_REQUEST
     })
 
     try {
@@ -15,13 +15,13 @@ export default function getAllCountries() {
       const result = await response.json()
       // Update payload in reducer on success
       dispatch({
-        type: a.COUNTRIES_GETALL_SUCCESS,
+        type: a.COMMENTS_GETALL_SUCCESS,
         payload: result
       })
     } catch (err) {
       // Update error in reducer on failure
       dispatch({
-        type: a.COUNTRIES_GETALL_FAILURE,
+        type: a.COMMENTS_GETALL_FAILURE,
         error: err
       })
     }

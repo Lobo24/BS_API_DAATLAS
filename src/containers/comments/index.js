@@ -2,26 +2,28 @@ import React from 'react'
 import 'babel-polyfill'
 import { connect } from 'react-redux'
 
-import getAllCountries from '../../redux/actionCreators/countries'
+import getAllComments from '../../redux/actionCreators/comments'
 
-import Main from '../../components/main/'
 import Loading from '../../components/loading/'
+import ProComments from '../../components/provinceComments/'
 
-class Home extends React.Component {
+
+class Comments extends React.Component {
   async componentDidMount() {
-    this.props.getAllCountries()
+    this.props.getAllComments()
   }
 
   render() {
+    var { isLoaded, comments, error, province } = this.props
 
-    var { isLoaded, countries, error } = this.props
+    alert(province + ' fuck')
 
     return (
       isLoaded ?
         <div className='row row--my row--mycont'>
           <div className='offset-1 col-md-10 col-sm-10'>
             <div className='container'>
-              <Main countries={countries} />
+              <ProComments comments={comments} />
             </div>
           </div>
         </div>
@@ -34,13 +36,13 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  countries: state.countries.countries,
-  isLoaded: state.countries.isLoaded,
-  error: state.countries.error
+  comments: state.comments.comments,
+  isLoaded: state.comments.isLoaded,
+  error: state.comments.error
 })
 
 const mapDispatchToProps = {
-  getAllCountries
+  getAllComments
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Comments)

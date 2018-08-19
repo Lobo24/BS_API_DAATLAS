@@ -1,8 +1,7 @@
-import React from 'react';
-import Card from './card/';
+import React from 'react'
+import Card from './card/'
 
 class Countries extends React.Component {
-
   constructor() {
     super();
     this.state = {
@@ -11,7 +10,7 @@ class Countries extends React.Component {
   }
 
   updateSearch(event) {
-    this.setState({ search: event.target.value.substr(0, 20) });
+    this.setState({ search: event.target.value.substr(0, 20) })
   }
 
   render() {
@@ -32,7 +31,7 @@ class Countries extends React.Component {
 
     return (
       <div className='countries-container'>
-        <input type="text" className="form-control input-filter" value={this.state.search} onChange={this.updateSearch.bind(this)} placeholder="SEARCH" />
+        <input type="text" className="form-control input-filter" value={this.state.search} onChange={this.updateSearch.bind(this)} placeholder='SEARCH' />
         <div className='card-deck'>
           {items}
         </div>
@@ -41,4 +40,4 @@ class Countries extends React.Component {
   }
 }
 
-export default Countries;
+export default Countries

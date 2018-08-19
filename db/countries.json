@@ -19903,5 +19903,19 @@
       ],
       "cioc": "ZIM"
     }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "country": "Costa Rica",
+      "province": "San Jose",
+      "comment": "Nice place to party"
+    },
+    {
+      "id": 2,
+      "country": "Costa Rica",
+      "province": "Alajuela",
+      "comment": "Hot af"
+    }
   ]
 }

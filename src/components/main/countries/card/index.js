@@ -1,8 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Card = ({ country }) => {
-
   return (
     <Link to={{ pathname: `/countryDetail/${country.alpha3Code}`, query: { 'obj': JSON.stringify(country) } }}>
       <div className='card'>
@@ -15,4 +14,4 @@ const Card = ({ country }) => {
   )
 }
 
-export default Card;
+export default Card

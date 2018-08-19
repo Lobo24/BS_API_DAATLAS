@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react'
 
 const DetailInfo = ({ country }) => {
   return (
     <div>
       <h1 className='detail-text'>{country.name}</h1>
-      <div className="countryDetail-info">
+      <div className='countryDetail-info'>
         <h3 className='detail-text'>Capital: {country.capital}</h3>
         <h3 className='detail-text'>Region: {country.region}</h3>
         <h3 className='detail-text'>Subregion: {country.subregion}</h3>
@@ -16,4 +16,4 @@ const DetailInfo = ({ country }) => {
   )
 }
 
-export default DetailInfo;
+export default DetailInfo

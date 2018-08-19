@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 class Provinces extends React.Component {
 
@@ -30,36 +31,40 @@ class Provinces extends React.Component {
 
 
     if (provinces == null)
-      return <div className="d-flex justify-content-center"><p className='whity-text'>There's no data available for the moment</p></div>
+      return <div className='d-flex justify-content-center'><p className='whity-text'>There's no data available for the moment</p></div>
 
     let size = provinces.length
 
     let items1 = provinces.slice(0, Math.round(size / 2)).map((province) => {
       return (
-        <div key={province}>
-          <p className='whity-text'>{province}</p>
-        </div>
+        <Link to={{ pathname: `/provinceComments/${province}`, query: { 'obj': JSON.stringify(province) } }}>
+          <div key={province}>
+            <p className='whity-text'>{province}</p>
+          </div>
+        </Link>
       )
     })
 
     let items2 = provinces.slice(Math.round(size / 2), size).map((province) => {
       return (
-        <div key={province}>
-          <p className='whity-text'>{province}</p>
-        </div>
+        <Link to={{ pathname: `/provinceComments/${province}`, query: { 'obj': JSON.stringify(province) } }}>
+          <div key={province}>
+            <p className='whity-text'>{province}</p>
+          </div>
+        </Link>
       )
     })
 
     return (
       isLoaded ?
         <div className='row row--my'>
-          <div className="col-md-6 col-sm-6">{items1}</div>
-          <div className="col-md-6 col-sm-6">{items2}</div>
+          <div className='col-md-6 col-sm-6'>{items1}</div>
+          <div className='col-md-6 col-sm-6'>{items2}</div>
         </div>
         : error ? <h3 className='whity-text'> There's no data available for the moment </h3>
-          : <div><h1 className="whity-text">Loading...</h1></div>
+          : <div><h1 className='whity-text'>Loading...</h1></div>
     )
   }
 }
 
-export default Provinces;
+export default Provinces
