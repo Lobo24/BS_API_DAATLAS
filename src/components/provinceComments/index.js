@@ -10,7 +10,7 @@ class provinceComments extends React.Component {
 
     let items = comments.map((comment) => {
       return (
-          <p>{comment.comment}</p>
+        <p key={(Math.floor((1 + Math.random()) * 0x10000))}>{comment.comment}</p>
       )
     })
 

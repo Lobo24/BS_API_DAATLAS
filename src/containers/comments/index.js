@@ -8,6 +8,8 @@ import addComment from '../../redux/actionCreators/commentsadd'
 import Loading from '../../components/loading/'
 import ProComments from '../../components/provinceComments/'
 
+import { Animated } from "react-animated-css";
+
 class Comments extends React.Component {
   constructor(props) {
     super(props)
@@ -28,7 +30,6 @@ class Comments extends React.Component {
 
   handleEnter(event) {
     if (event.keyCode === 13) {
-      console.log(event.keyCode)
       this.addComments()
     }
   }
@@ -50,7 +51,7 @@ class Comments extends React.Component {
     })
 
     let provcomm = filteredJson.map(comm => {
-      return (<ProComments comments={comm.comments} />)
+      return (<ProComments key={(Math.floor((1 + Math.random()) * 0x10000))} comments={comm.comments} />)
     })
 
     if (comments == null)
@@ -66,11 +67,13 @@ class Comments extends React.Component {
             <div className='d-flex justify-content-center'>
               <input id='addcomment' onKeyUp={this.handleEnter.bind(this)} type='text' className='commeds--imput' placeholder='Add Comment' />
             </div>
-            <div className='container'>
-              <div className="row row--my d-flex justify-content-center">
-                {provcomm}
+            <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
+              <div className='container'>
+                <div className="row row--my d-flex justify-content-center">
+                  {provcomm}
+                </div>
               </div>
-            </div>
+            </Animated>
           </div>
         </div>
         : error ? <p>Error...</p>

@@ -35,8 +35,8 @@ class Provinces extends React.Component {
 
     let items1 = provinces.slice(0, Math.round(size / 2)).map((province) => {
       return (
-        <li>
-          <Link key={province} to={{ pathname: `/provinceComments/${province}`, state: { province } }}>
+        <li  key={province}>
+          <Link to={{ pathname: `/provinceComments/${province}`, state: { province } }}>
             <p className='whity-text'>{province}</p>
           </Link>
         </li>
@@ -45,8 +45,8 @@ class Provinces extends React.Component {
 
     let items2 = provinces.slice(Math.round(size / 2), size).map((province) => {
       return (
-        <li>
-          <Link key={province} to={{ pathname: `/provinceComments/${province}`, state: { province } }}>
+        <li key={province}>
+          <Link to={{ pathname: `/provinceComments/${province}`, state: { province } }}>
             <p className='whity-text'>{province}</p>
           </Link>
         </li>
