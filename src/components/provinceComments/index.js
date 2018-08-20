@@ -10,18 +10,14 @@ class provinceComments extends React.Component {
 
     let items = comments.map((comment) => {
       return (
-        <li className='province-comment-li'>
-          <div className='province-comment-cont'>
-            <p>{comment.comment}</p>
-          </div>
-        </li>
+          <p>{comment.comment}</p>
       )
     })
 
     return (
-      <ul className='non-list-style commends-non-list-style'>
+      <div className='commends-cont-all'>
         {items}
-      </ul>
+      </div>
     )
   }
 }

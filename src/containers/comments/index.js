@@ -16,12 +16,21 @@ class Comments extends React.Component {
 
   addComments() {
     let inputcomment = document.getElementById('addcomment').value
-    let prov = this.props.location.state
+    document.getElementById('addcomment').value = ''
+    let prov = this.props.location.state.province
     let commm = {
+      "id": (Math.floor((1 + Math.random()) * 0x10000)),
       "province": prov,
-      "comment": [{ "comment": inputcomment }]
+      "comments": [{ "comment": inputcomment }]
     }
     this.props.addComment(commm)
+  }
+
+  handleEnter(event) {
+    if (event.keyCode === 13) {
+      console.log(event.keyCode)
+      this.addComments()
+    }
   }
 
   async componentDidMount() {
@@ -33,7 +42,7 @@ class Comments extends React.Component {
     var { province } = this.props.location.state
 
     var filteredJson = comments.filter(function (row) {
-      if (row.province.toLowerCase() == province.toLowerCase()) {
+      if (row.province.toLowerCase() === province.toLowerCase()) {
         return true
       } else {
         return false
@@ -55,11 +64,12 @@ class Comments extends React.Component {
               <h1 id='provname' className='whity-text'>{province}</h1>
             </div>
             <div className='d-flex justify-content-center'>
-              <input id='addcomment' type='text' className='commeds--imput' placeholder='Add Comment' />
-              <button onClick={this.addComments}>SEND COMMENT</button>
+              <input id='addcomment' onKeyUp={this.handleEnter.bind(this)} type='text' className='commeds--imput' placeholder='Add Comment' />
             </div>
-            <div className='container d-flex justify-content-center'>
-              {provcomm}
+            <div className='container'>
+              <div className="row row--my d-flex justify-content-center">
+                {provcomm}
+              </div>
             </div>
           </div>
         </div>
