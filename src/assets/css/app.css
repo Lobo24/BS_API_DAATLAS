@@ -277,6 +277,25 @@ body {
   }
 }
 
+/************************************     provinces    *********************************************/
+
+.row-provinces.row {
+  padding-top: 3%;
+}
+
+.province-comment-li {
+  padding: 1% 10%;
+}
+
+.province-comment-cont {
+  border: 1px solid #e5e5e5;
+}
+
+.province-comment-cont p {
+  margin: 0;
+  padding: 1%;
+}
+
 /************************************     TABS    *********************************************/
 
 .tabs-nav-text {
@@ -285,4 +304,19 @@ body {
 
 .nav-item {
   cursor: pointer;
+}
+
+/************************************     COMMENTS    *********************************************/
+
+.commends-non-list-style {
+  padding: 0;
+  background-color: #fff;
+  width: 70%;
+  border-radius: 40px;
+}
+
+.commeds--imput {
+  width: 65%;
+  border-radius: 10px;
+  margin-bottom: 2%;
 }

@@ -24,6 +24,12 @@ export default function commentsReducer(state = INITIAL_STATE, action) {
         error: action.error,
         isLoaded: false
       }
+    case a.COMMENTS_UPDATE:
+      return {
+        ...state,
+        comments: action.payload,
+        isLoaded: true
+      }
     default:
       return state
   }

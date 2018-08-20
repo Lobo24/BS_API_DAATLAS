@@ -28,40 +28,36 @@ class Provinces extends React.Component {
     var { isLoaded, error } = this.state;
     var { provinces } = this.props;
 
-    let counterkey = 0
-
     if (provinces == null)
       return <div className='d-flex justify-content-center'><p className='whity-text'>There's no data available for the moment</p></div>
 
     let size = provinces.length
 
     let items1 = provinces.slice(0, Math.round(size / 2)).map((province) => {
-      counterkey++
       return (
-        <Link to={{ pathname: `/provinceComments/${province}`, state: { province } }}>
-          <div key={province + counterkey}>
+        <li>
+          <Link key={province} to={{ pathname: `/provinceComments/${province}`, state: { province } }}>
             <p className='whity-text'>{province}</p>
-          </div>
-        </Link>
+          </Link>
+        </li>
       )
     })
 
     let items2 = provinces.slice(Math.round(size / 2), size).map((province) => {
-      counterkey++
       return (
-        <Link to={{ pathname: `/provinceComments/${province}`, query: { 'obj': JSON.stringify(province) } }}>
-          <div key={province + counterkey}>
+        <li>
+          <Link key={province} to={{ pathname: `/provinceComments/${province}`, state: { province } }}>
             <p className='whity-text'>{province}</p>
-          </div>
-        </Link>
+          </Link>
+        </li>
       )
     })
 
     return (
       isLoaded ?
-        <div className='row row--my'>
-          <div className='col-md-6 col-sm-6'>{items1}</div>
-          <div className='col-md-6 col-sm-6'>{items2}</div>
+        <div className='row row--my row-provinces'>
+          <div className='col-md-6 col-sm-6'><ul className='non-list-style'>{items1}</ul></div>
+          <div className='col-md-6 col-sm-6'><ul className='non-list-style'>{items2}</ul></div>
         </div>
         : error ? <h3 className='whity-text'> There's no data available for the moment </h3>
           : <div><h1 className='whity-text'>Loading...</h1></div>
