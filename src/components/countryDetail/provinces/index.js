@@ -28,7 +28,7 @@ class Provinces extends React.Component {
     var { isLoaded, error } = this.state;
     var { provinces } = this.props;
 
-
+    let counterkey = 0
 
     if (provinces == null)
       return <div className='d-flex justify-content-center'><p className='whity-text'>There's no data available for the moment</p></div>
@@ -36,9 +36,10 @@ class Provinces extends React.Component {
     let size = provinces.length
 
     let items1 = provinces.slice(0, Math.round(size / 2)).map((province) => {
+      counterkey++
       return (
-        <Link to={{ pathname: `/provinceComments/${province}`, query: { 'obj': JSON.stringify(province) } }}>
-          <div key={province}>
+        <Link to={{ pathname: `/provinceComments/${province}`, state: { province } }}>
+          <div key={province + counterkey}>
             <p className='whity-text'>{province}</p>
           </div>
         </Link>
@@ -46,9 +47,10 @@ class Provinces extends React.Component {
     })
 
     let items2 = provinces.slice(Math.round(size / 2), size).map((province) => {
+      counterkey++
       return (
         <Link to={{ pathname: `/provinceComments/${province}`, query: { 'obj': JSON.stringify(province) } }}>
-          <div key={province}>
+          <div key={province + counterkey}>
             <p className='whity-text'>{province}</p>
           </div>
         </Link>

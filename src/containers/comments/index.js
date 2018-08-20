@@ -14,16 +14,33 @@ class Comments extends React.Component {
   }
 
   render() {
-    var { isLoaded, comments, error, province } = this.props
+    var { isLoaded, comments, error } = this.props
+    var { province } = this.props.location.state
 
-    alert(province + ' fuck')
+    var filteredJson = comments.filter(function (row) {
+      if (row.province.toLowerCase() == province.toLowerCase()) {
+        return true
+      } else {
+        return false
+      }
+    })
+
+    let shit = filteredJson.map(comm => {
+      return (<ProComments comments={comm} />)
+    })
+
+    if (comments == null)
+      return <div className='d-flex justify-content-center'><p className='whity-text'>There's no data available for the moment</p></div>
 
     return (
       isLoaded ?
         <div className='row row--my row--mycont'>
           <div className='offset-1 col-md-10 col-sm-10'>
+            <div className='d-flex justify-content-center'>
+              <h1 className='whity-text'>{province}</h1>
+            </div>
             <div className='container'>
-              <ProComments comments={comments} />
+              {shit}
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import * as a from '../actions/types'
 
-const API_URL = 'http://localhost:3000/comments'
+const API_URL = 'http://localhost:3000/allComments'
 
 export default function getAllComments() {
   return async dispatch => {
